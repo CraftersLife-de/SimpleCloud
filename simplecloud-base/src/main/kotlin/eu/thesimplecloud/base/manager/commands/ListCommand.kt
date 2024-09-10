@@ -1,4 +1,4 @@
-/*
+﻿/*
  * MIT License
  *
  * Copyright (C) 2020-2022 The SimpleCloud authors
@@ -64,11 +64,14 @@ class ListCommand : ICommandHandler {
                         + groups.getRegisteredServiceCount() + " " + serviceName + darkChatColor + ")"
             )
 
+
+
             groups.getAllServices().forEach {
                 val wrapperDesign =
                     if (it.getWrapperName() != null) " " + darkChatColor + "|§3 " + it.getWrapperName() else ""
+                val displayname = if(it.getDisplayName() != it.getName()) " / " + it.getDisplayName() else ""
                 commandSender.sendMessage(
-                    darkChatColor + "- §b" + it.getName() + " " + darkChatColor + "(§f"
+                    darkChatColor + "- §b" + it.getName() + displayname + " " + darkChatColor + "(§f"
                             + it.getUsedMemory() + "MB" + " ${darkChatColor}| "
                             + "§f" + it.getOnlineCount()
                             + darkChatColor + "/§f"
