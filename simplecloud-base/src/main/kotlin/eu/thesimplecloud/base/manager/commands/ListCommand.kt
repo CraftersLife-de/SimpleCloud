@@ -52,7 +52,6 @@ class ListCommand : ICommandHandler {
         }
 
         commandSender.sendMessage(" ")
-
         val cloudServices = CloudAPI.instance.getCloudServiceManager().getAllCachedObjects()
         val cloudServiceGroups = CloudAPI.instance.getCloudServiceGroupManager().getAllCachedObjects()
         cloudServiceGroups.filter { it.getAllServices().isNotEmpty() }.forEach { groups ->
